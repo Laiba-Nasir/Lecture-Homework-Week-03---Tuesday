@@ -1,3 +1,6 @@
+`ifndef SHIFT_REGISTER_SV
+`define SHIFT_REGISTER_SV
+
 module shift_register #(
     // parameter list 
     // MSB = 1st, LSB =1st 
@@ -53,3 +56,5 @@ end
 // shift logic 
 
 endmodule
+
+`endif
