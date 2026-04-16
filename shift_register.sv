@@ -6,16 +6,16 @@ module shift_register #(
     // MSB = 1st, LSB =1st 
     parameter DIRECTION = 1
 )(
-    input logic clk,
-    input logic rst,  // indicates shift register should be reset to all 0s
-    input logic data,
-    input logic wr_en,
-    output logic [31:0] out
+    input wire clk,
+    input wire rst,  // indicates shift register should be reset to all 0s
+    input wire data,
+    input wire wr_en,
+    output reg [31:0] out
 );
 
 // alway blk that triggers on +ve egde 
 // should handle reset and write enable based on DIRECTION 
-always_ff @(posedge clk) begin : blockName
+always @(posedge clk) begin : blockName
     // handle reset and write enable 
     if (rst) begin
         out <= 32'b0; 
